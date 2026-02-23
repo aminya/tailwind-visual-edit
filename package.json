@@ -2,9 +2,10 @@
   "name": "tailwind-visual-edit",
   "displayName": "Tailwind Visual Edit",
   "description": "Color-coded Tailwind class highlighting and visual editing panel",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "tailwind-visual-edit",
   "license": "MIT",
+  "icon": "media/icon.png",
   "repository": {
     "type": "git",
     "url": ""
