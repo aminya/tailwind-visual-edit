@@ -1,0 +1,78 @@
+{
+  "name": "tailwind-visual-edit",
+  "displayName": "Tailwind Visual Edit",
+  "description": "Color-coded Tailwind class highlighting and visual editing panel",
+  "version": "0.1.0",
+  "publisher": "tailwind-visual-edit",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "activationEvents": [
+    "onLanguage:typescriptreact",
+    "onLanguage:javascriptreact",
+    "onLanguage:html",
+    "onLanguage:vue",
+    "onLanguage:svelte"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "tailwind-visual-edit",
+          "title": "Tailwind Visual Edit",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "tailwind-visual-edit": [
+        {
+          "type": "webview",
+          "id": "tailwindVisualEdit.panel",
+          "name": "Visual Editor"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "tailwindVisualEdit.toggleHighlighting",
+        "title": "Tailwind Visual Edit: Toggle Class Highlighting"
+      }
+    ],
+    "configuration": {
+      "title": "Tailwind Visual Edit",
+      "properties": {
+        "tailwindVisualEdit.enableHighlighting": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable color-coded highlighting of Tailwind classes"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && node esbuild.js",
+    "check-types": "tsc --noEmit",
+    "watch": "node esbuild.js --watch",
+    "package": "npm run check-types && node esbuild.js --production",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.3.0",
+    "eslint": "^8.0.0"
+  }
+}

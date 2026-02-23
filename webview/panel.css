@@ -1,0 +1,367 @@
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--vscode-font-family);
+  font-size: var(--vscode-font-size);
+  color: var(--vscode-foreground);
+  background: var(--vscode-sideBar-background);
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   Placeholder (no element selected)
+   ============================================================ */
+.placeholder {
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--vscode-descriptionForeground);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.placeholder-icon {
+  margin-bottom: 12px;
+  color: var(--vscode-descriptionForeground);
+}
+.placeholder-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--vscode-foreground);
+  margin-bottom: 8px;
+}
+
+/* ============================================================
+   Element header
+   ============================================================ */
+.element-header {
+  padding: 10px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--vscode-sideBarSectionHeader-background);
+  border-bottom: 1px solid var(--vscode-panel-border, rgba(128,128,128,0.2));
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.element-header .tag-badge {
+  background: var(--vscode-badge-background);
+  color: var(--vscode-badge-foreground);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-family: var(--vscode-editor-font-family, monospace);
+}
+.element-header .class-count {
+  font-size: 11px;
+  color: var(--vscode-descriptionForeground);
+  font-weight: 400;
+}
+
+/* ============================================================
+   Classes preview chips
+   ============================================================ */
+.classes-preview {
+  padding: 8px 16px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  border-bottom: 1px solid var(--vscode-panel-border, rgba(128,128,128,0.2));
+}
+.class-chip {
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-family: var(--vscode-editor-font-family, monospace);
+}
+/* Category colors for chips */
+.class-chip.layout { background: rgba(251, 146, 60, 0.2); color: rgb(251, 146, 60); }
+.class-chip.spacing { background: rgba(59, 130, 246, 0.2); color: rgb(96, 165, 250); }
+.class-chip.sizing { background: rgba(6, 182, 212, 0.2); color: rgb(34, 211, 238); }
+.class-chip.typography { background: rgba(168, 85, 247, 0.2); color: rgb(192, 132, 252); }
+.class-chip.colors { background: rgba(34, 197, 94, 0.2); color: rgb(74, 222, 128); }
+.class-chip.borders { background: rgba(234, 179, 8, 0.2); color: rgb(250, 204, 21); }
+.class-chip.effects { background: rgba(236, 72, 153, 0.2); color: rgb(244, 114, 182); }
+.class-chip.interactivity { background: rgba(156, 163, 175, 0.2); color: rgb(156, 163, 175); }
+.class-chip.unknown { background: rgba(128, 128, 128, 0.1); color: var(--vscode-descriptionForeground); }
+
+/* ============================================================
+   Section structure
+   ============================================================ */
+.section {
+  border-bottom: 1px solid var(--vscode-panel-border, rgba(128,128,128,0.2));
+}
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--vscode-foreground);
+  cursor: pointer;
+  user-select: none;
+}
+.section-title:hover {
+  background: var(--vscode-list-hoverBackground);
+}
+.section-title .section-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  margin-right: 6px;
+  font-size: 10px;
+}
+.section-title .section-icon.spacing { background: rgba(59, 130, 246, 0.2); color: rgb(96, 165, 250); }
+.section-title .section-icon.typography { background: rgba(168, 85, 247, 0.2); color: rgb(192, 132, 252); }
+.section-title .section-icon.colors { background: rgba(34, 197, 94, 0.2); color: rgb(74, 222, 128); }
+.section-title .section-icon.effects { background: rgba(236, 72, 153, 0.2); color: rgb(244, 114, 182); }
+
+.section-title .chevron {
+  font-size: 10px;
+  transition: transform 0.15s ease;
+}
+.section-title.collapsed .chevron {
+  transform: rotate(-90deg);
+}
+.section-body {
+  padding: 8px 16px 16px;
+}
+.section-body.hidden {
+  display: none;
+}
+
+/* ============================================================
+   Form controls
+   ============================================================ */
+.control-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.control-label {
+  font-size: 11px;
+  color: var(--vscode-descriptionForeground);
+  min-width: 80px;
+  flex-shrink: 0;
+}
+.control-input {
+  flex: 1;
+  max-width: 160px;
+}
+
+/* Select & inputs */
+select, input[type="text"], input[type="number"] {
+  width: 100%;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: var(--vscode-input-background);
+  color: var(--vscode-input-foreground);
+  border: 1px solid var(--vscode-input-border, rgba(128,128,128,0.3));
+  border-radius: 4px;
+  outline: none;
+  font-family: var(--vscode-font-family);
+}
+select:focus, input:focus {
+  border-color: var(--vscode-focusBorder);
+}
+select {
+  cursor: pointer;
+}
+
+/* ============================================================
+   Spacing box model
+   ============================================================ */
+.spacing-box-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.spacing-box {
+  position: relative;
+  width: 100%;
+  max-width: 240px;
+}
+.margin-layer {
+  border: 1.5px dashed rgba(251, 146, 60, 0.5);
+  padding: 16px;
+  border-radius: 6px;
+  position: relative;
+  background: rgba(251, 146, 60, 0.03);
+}
+.margin-layer .layer-label {
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  font-size: 9px;
+  color: rgb(251, 146, 60);
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.padding-layer {
+  border: 1.5px dashed rgba(59, 130, 246, 0.5);
+  padding: 16px;
+  border-radius: 4px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: rgba(59, 130, 246, 0.03);
+}
+.padding-layer .layer-label {
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  font-size: 9px;
+  color: rgb(96, 165, 250);
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.element-label {
+  font-size: 10px;
+  color: var(--vscode-descriptionForeground);
+  opacity: 0.6;
+}
+.spacing-input {
+  width: 28px;
+  text-align: center;
+  padding: 1px 2px;
+  font-size: 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: var(--vscode-foreground);
+  font-family: var(--vscode-editor-font-family, monospace);
+}
+.spacing-input:hover {
+  border-color: var(--vscode-input-border, rgba(128,128,128,0.3));
+  background: var(--vscode-input-background);
+}
+.spacing-input:focus {
+  background: var(--vscode-input-background);
+  border-color: var(--vscode-focusBorder);
+  outline: none;
+}
+/* Position inputs around the margin layer */
+.margin-layer > .top-input { position: absolute; top: -2px; left: 50%; transform: translate(-50%, -50%); }
+.margin-layer > .right-input { position: absolute; right: -2px; top: 50%; transform: translate(50%, -50%); }
+.margin-layer > .bottom-input { position: absolute; bottom: -2px; left: 50%; transform: translate(-50%, 50%); }
+.margin-layer > .left-input { position: absolute; left: -2px; top: 50%; transform: translate(-50%, -50%); }
+/* Position inputs around the padding layer */
+.padding-layer > .top-input { position: absolute; top: -2px; left: 50%; transform: translate(-50%, -50%); }
+.padding-layer > .right-input { position: absolute; right: -2px; top: 50%; transform: translate(50%, -50%); }
+.padding-layer > .bottom-input { position: absolute; bottom: -2px; left: 50%; transform: translate(-50%, 50%); }
+.padding-layer > .left-input { position: absolute; left: -2px; top: 50%; transform: translate(-50%, -50%); }
+
+/* ============================================================
+   Color swatch
+   ============================================================ */
+.color-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.color-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid var(--vscode-input-border, rgba(128,128,128,0.3));
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.color-swatch:hover {
+  border-color: var(--vscode-focusBorder);
+}
+.color-value-input {
+  flex: 1;
+}
+
+/* Color palette grid */
+.color-palette {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  gap: 2px;
+  margin-top: 8px;
+  padding: 8px;
+  background: var(--vscode-input-background);
+  border-radius: 6px;
+  border: 1px solid var(--vscode-input-border, rgba(128,128,128,0.3));
+}
+.color-palette.hidden { display: none; }
+.palette-swatch {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.1s ease;
+}
+.palette-swatch:hover {
+  transform: scale(1.3);
+  z-index: 1;
+  border-color: var(--vscode-foreground);
+}
+.palette-swatch.active {
+  border: 2px solid var(--vscode-foreground);
+}
+
+/* ============================================================
+   Chip group (font weight, text align, etc.)
+   ============================================================ */
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.chip {
+  padding: 3px 8px;
+  font-size: 11px;
+  border: 1px solid var(--vscode-input-border, rgba(128,128,128,0.3));
+  border-radius: 4px;
+  cursor: pointer;
+  background: transparent;
+  color: var(--vscode-foreground);
+  transition: all 0.1s ease;
+  font-family: var(--vscode-font-family);
+}
+.chip:hover {
+  background: var(--vscode-list-hoverBackground);
+}
+.chip.active {
+  background: var(--vscode-button-background);
+  color: var(--vscode-button-foreground);
+  border-color: var(--vscode-button-background);
+}
+
+/* ============================================================
+   Slider
+   ============================================================ */
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.slider-row input[type="range"] {
+  flex: 1;
+  height: 4px;
+  accent-color: var(--vscode-focusBorder);
+  cursor: pointer;
+}
+.slider-value {
+  font-size: 11px;
+  min-width: 30px;
+  text-align: right;
+  font-family: var(--vscode-editor-font-family, monospace);
+  color: var(--vscode-descriptionForeground);
+}
