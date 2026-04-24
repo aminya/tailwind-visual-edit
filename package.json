@@ -8,7 +8,7 @@
   "icon": "media/icon.png",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/muamdah/tailwind-visual-edit"
   },
   "engines": {
     "vscode": "^1.85.0"
